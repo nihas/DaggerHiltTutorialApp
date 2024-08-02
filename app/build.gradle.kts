@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "app.map.harrypotter"
+    namespace = "app.map.daggerhilt"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "app.map.harrypotter"
+        applicationId = "app.map.daggerhilt"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

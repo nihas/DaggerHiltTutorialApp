@@ -1,10 +1,6 @@
-package app.map.harrypotter.di
+package app.map.daggerhilt.di
 
-import android.app.Application
-import app.map.harrypotter.HarryPotterApp
-import app.map.harrypotter.data.remote.HarryPotterApi
-import app.map.harrypotter.data.repository.HarryPotterRepositoryImpl
-import app.map.harrypotter.domain.repository.HarryPotterRepository
+import app.map.daggerhilt.data.remote.MyApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,14 +20,14 @@ object AppModule {
     @Provides
     @Singleton // called scope & it will have only single instance throughout lifetime
     //If its not present all the repository accessing this will create seperate instances
-    fun provideApiInstance(): HarryPotterApi {
+    fun provideApiInstance(): MyApi {
         return Retrofit
             .Builder()
             .baseUrl("https://google.com")
             .client(createOkHttpClient()) // Use custom OkHttpClient with logging
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-            .create(HarryPotterApi::class.java)
+            .create(MyApi::class.java)
     }
 
     private fun createOkHttpClient(): OkHttpClient {
@@ -47,12 +43,12 @@ object AppModule {
 //    @Provides
 //    @Singleton
 //    fun provideRepository(
-//        api: HarryPotterApi,
+//        api: MyApi,
 //        app: Application,
 //        @Named("hello1") hello1: String
-//    ): HarryPotterRepository{
-//        //Here we need HarryPotterApi
-//        return HarryPotterRepositoryImpl(api,app)
+//    ): MyRepository{
+//        //Here we need MyApi
+//        return MyRepositoryImpl(api,app)
 //    }
 
     @Provides

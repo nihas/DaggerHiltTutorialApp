@@ -1,4 +1,4 @@
-package app.map.harrypotter
+package app.map.daggerhilt
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,7 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
-import app.map.harrypotter.ui.theme.HarryPotterComposeAppTheme
+import app.map.daggerhilt.ui.theme.DaggerHiltTutorialTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -19,7 +19,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            HarryPotterComposeAppTheme {
+            DaggerHiltTutorialTheme {
                 val viewModel = hiltViewModel<MainViewModel>()
                 // A surface container using the 'background' color from the theme
                 Surface(
@@ -44,7 +44,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    HarryPotterComposeAppTheme {
+    DaggerHiltTutorialTheme {
         Greeting("Android")
     }
 }

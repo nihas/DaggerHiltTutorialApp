@@ -1,16 +1,16 @@
-package app.map.harrypotter
+package app.map.daggerhilt
 
 import android.app.Service
 import android.content.Intent
 import android.os.IBinder
-import app.map.harrypotter.domain.repository.HarryPotterRepository
+import app.map.daggerhilt.domain.repository.MyRepository
 import javax.inject.Inject
 
 class MyService: Service() {
 
     //In Service no constructor allowed. so this inject annotation will take care of injection
     @Inject
-    lateinit var harryPotterRepository: HarryPotterRepository
+    lateinit var myRepository: MyRepository
 
     override fun onBind(intent: Intent?): IBinder? {
         return null

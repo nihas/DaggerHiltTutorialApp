@@ -1,4 +1,4 @@
-package app.map.harrypotter
+package app.map.daggerhilt
 
 import org.junit.Test
 

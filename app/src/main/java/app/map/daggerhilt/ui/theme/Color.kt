@@ -1,4 +1,4 @@
-package app.map.harrypotter.ui.theme
+package app.map.daggerhilt.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "HarryPotterComposeApp"
+rootProject.name = "DaggerHiltTutorial"
 include(":app")
  
