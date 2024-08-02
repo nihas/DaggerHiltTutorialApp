@@ -3,8 +3,9 @@ package app.map.harrypotter.data.repository
 import android.app.Application
 import app.map.harrypotter.data.remote.HarryPotterApi
 import app.map.harrypotter.domain.repository.HarryPotterRepository
+import javax.inject.Inject
 
-class HarryPotterRepositoryImpl(
+class HarryPotterRepositoryImpl @Inject constructor(
     private val api: HarryPotterApi,
     private val appContext: Application
 ): HarryPotterRepository {

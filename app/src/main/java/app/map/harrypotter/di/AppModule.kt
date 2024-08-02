@@ -27,7 +27,7 @@ object AppModule {
     fun provideApiInstance(): HarryPotterApi {
         return Retrofit
             .Builder()
-            .baseUrl("")
+            .baseUrl("https://google.com")
             .client(createOkHttpClient()) // Use custom OkHttpClient with logging
             .addConverterFactory(GsonConverterFactory.create())
             .build()
@@ -43,16 +43,17 @@ object AppModule {
             .build()
     }
 
-    @Provides
-    @Singleton
-    fun provideRepository(
-        api: HarryPotterApi,
-        app: Application,
-        @Named("hello1") hello1: String
-    ): HarryPotterRepository{
-        //Here we need HarryPotterApi
-        return HarryPotterRepositoryImpl(api,app)
-    }
+    //We Created seperate module for repository
+//    @Provides
+//    @Singleton
+//    fun provideRepository(
+//        api: HarryPotterApi,
+//        app: Application,
+//        @Named("hello1") hello1: String
+//    ): HarryPotterRepository{
+//        //Here we need HarryPotterApi
+//        return HarryPotterRepositoryImpl(api,app)
+//    }
 
     @Provides
     @Singleton
